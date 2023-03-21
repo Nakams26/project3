@@ -2,7 +2,7 @@
 //import useState
 import { useState } from "react";
 
-const Form = () => {
+const Form = (props) => {
   //Initialize state to keep track of the sports selected by the user 
   const [sportSelected, setSportSelected] = useState("placeholder");
     //Initialize state to keep track of the date selected by the user 
@@ -10,14 +10,12 @@ const Form = () => {
 
   //Creating a function to follow every change in the sport selection
   const handleChangeSport = (e) => {
-     console.log(e.target.value);
     setSportSelected(e.target.value);
   };
 
 
   //Creating a function to follow every change in the date selection
   const handleChangeDate = (e) => {
-    console.log(e.target.value);
     setDateSelected(e.target.value);
   };
 
@@ -28,7 +26,7 @@ const Form = () => {
       <h2>
         Please select above a sport and a date to display the related event
       </h2>
-      <form action="">
+      <form action="" onSubmit={(event)=>{props.handleSubmit(event,[sportSelected,dateSelected])}}>
         <label htmlFor="sportSelection" className="sr-only">
           Select a sport
         </label>
@@ -41,7 +39,6 @@ const Form = () => {
           <option value="placeholder" disabled>
             Select a sport
           </option>
-          <option value="soccer">Soccer</option>
           <option value="basketball">Basket-Ball</option>
           <option value="hockey">Hockey</option>
           <option value="tennis">Tennis</option>
@@ -58,6 +55,7 @@ const Form = () => {
         >
 
         </input>
+        <button type="submit">Get me scores!</button>
       </form>
     </section>
   );
