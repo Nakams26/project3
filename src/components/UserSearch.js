@@ -30,7 +30,7 @@ const UserSearch = () => {
       console.log(apiData.data.Stages);
       setEvent(apiData.data.Stages);
     });
-      },[sportValue])
+      },[sportValue, dateValue])
 
 //New function to handle the form submission
 const userChoices = (e, userChoices) => {
