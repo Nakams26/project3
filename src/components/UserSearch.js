@@ -8,48 +8,53 @@ import EventGallery from "./EventGallery";
 
 const UserSearch = () => {
   //Initialize state to keep track of the even returned by the API
-  const [event, setEvent] = useState([]);
+  const [results, setResults] = useState([]);
   //Initialize state to keep track of the sport selection by the user
-  const [sportValue, setSportValue] = useState(null);
+  const [sportValue, setSportValue] = useState("placeholder");
   //Initialize state to keep track of the sport selection by the user
-  const [dateValue, setDateValue] = useState(null);
+  const [dateValue, setDateValue] = useState("");
 
-  useEffect(()=>{
+  useEffect(() => {
     axios({
       //URL endpoint
-      url: "https:/", //https://livescore6.p.rapidapi.com/matches/v2/list-by-date
-      params: { 
+      url: "https://livescore6.p.rapidapi.com/matches/v2/list-by-date", //https://livescore6.p.rapidapi.com/matches/v2/list-by-date
+      params: {
         Category: sportValue,
-         Date: dateValue, 
-         Timezone: "-7" },
+        Date: dateValue,
+        Timezone: "-5",
+      },
       headers: {
         "X-RapidAPI-Key": "f41054b742msh9578c6817557443p1785aajsna650c985541f",
         "X-RapidAPI-Host": "livescore6.p.rapidapi.com",
       },
     }).then((apiData) => {
       console.log(apiData.data.Stages);
-      setEvent(apiData.data.Stages);
+      setResults(apiData.data.Stages);
     });
-      },[sportValue, dateValue])
+  }, [sportValue, dateValue]);
 
-//New function to handle the form submission
-const userChoices = (e, userChoices) => {
-  e.preventDefault();
-  setSportValue(userChoices[0])
-
-  //Reformatting the date to respect the formats asked by the API documentation
-  const date = new Date(userChoices[1])
-  // console.log(date)
-  const formattedDate = `${date.getFullYear()}${'0'+ (date.getMonth()+1)}${date.getDate()+1}`;
-  // console.log(dateMDY)
-   setDateValue(formattedDate)
-}
-
+  //New function to handle the form submission
+  const userChoices = (e, userChoices) => {
+    e.preventDefault();
+    //Alert user that he has to select a sport first before submit
+    if (userChoices[0] !== "placeholder") {
+      //Assign the input value to the sport value
+      setSportValue(userChoices[0]);
+    } else alert("Please select a sport");
+    //Reformatting the date to respect the format asked by the API documentation
+    const date = new Date(userChoices[1]);
+    const formattedDate = `${date.getFullYear()}${"0" + (date.getMonth() + 1)}${
+      date.getDate() + 1
+    }`;
+    //Assign the reformatted date to the date value
+    setDateValue(formattedDate);
+  };
 
   return (
     <main>
-      <Form handleSubmit={userChoices}/>
-      <EventGallery currentEvent={event}/>
+      {/* Running  the function when submitting the form */}
+      <Form handleSubmit={userChoices} />
+      <EventGallery currentEvent={results} />
     </main>
   );
 };

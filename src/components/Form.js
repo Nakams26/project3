@@ -52,6 +52,7 @@ const Form = (props) => {
           value={dateSelected}
           name="dateSelection"
           id="dateSelection"
+          required
         >
 
         </input>
