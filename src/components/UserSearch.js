@@ -13,24 +13,45 @@ const UserSearch = () => {
   const [sportValue, setSportValue] = useState("placeholder");
   //Initialize state to keep track of the sport selection by the user
   const [dateValue, setDateValue] = useState("");
+  //Initialize state to represent API request error
+  const [apiError, setApiError] = useState(false);
 
+  //Doing my api call in a useEffect hook because I want it to happen depending on the date and sport value change.
   useEffect(() => {
-    axios({
-      //URL endpoint
-      url: "https://livescore6.p.rapidapi.com/matches/v2/list-by-date", //https://livescore6.p.rapidapi.com/matches/v2/list-by-date
-      params: {
-        Category: sportValue,
-        Date: dateValue,
-        Timezone: "-5",
-      },
-      headers: {
-        "X-RapidAPI-Key": "f41054b742msh9578c6817557443p1785aajsna650c985541f",
-        "X-RapidAPI-Host": "livescore6.p.rapidapi.com",
-      },
-    }).then((apiData) => {
-      console.log(apiData.data.Stages);
-      setResults(apiData.data.Stages);
-    });
+    if (sportValue === "basketball" || sportValue === "tennis" || sportValue === "hockey") {
+      axios({
+        //URL endpoint
+        url: "https://livescore6.p.rapidapi.com/matches/v2/list-by-date", //https://livescore6.p.rapidapi.com/matches/v2/list-by-date
+        params: {
+          Category: sportValue,
+          Date: dateValue,
+          Timezone: "-4",
+        },
+        headers: {
+          "X-RapidAPI-Key": "fce0b31f1amshb0c1389fb793328p1baa8cjsnb0db7d2d1868",
+          "X-RapidAPI-Host": "livescore6.p.rapidapi.com",
+        },
+      })
+        .then((apiData) => {
+          console.log(apiData.data.Stages);
+          setResults(apiData.data.Stages);
+          setApiError(false);
+        })
+        //Catching errors
+        .catch((error) => {
+          // Error
+          if (error.response) {
+            // The request was made and the server responded with a status code that falls out of the range of 2xx >> Api error to true
+            setApiError(true);
+          } else if (error.request) {
+            // The request was made but no response was received >> Api error to true
+            setApiError(true);
+          } else {
+            // Something happened in setting up the request that triggered an Error >> Api error to true
+            setApiError(true);
+          }
+        });
+    }
   }, [sportValue, dateValue]);
 
   //New function to handle the form submission
@@ -40,6 +61,7 @@ const UserSearch = () => {
     if (userChoices[0] !== "placeholder") {
       //Assign the input value to the sport value
       setSportValue(userChoices[0]);
+      //Alert the user if he didn't select a sport.
     } else alert("Please select a sport");
     //Reformatting the date to respect the format asked by the API documentation
     const date = new Date(userChoices[1]);
@@ -52,8 +74,8 @@ const UserSearch = () => {
 
   return (
     <main>
-      {/* Running  the function when submitting the form */}
-      <Form handleSubmit={userChoices} />
+      {/* Running  the function when submitting the form. Passing the api error as props */}
+      <Form handleSubmit={userChoices} formError={apiError} />
       <EventGallery currentEvent={results} />
     </main>
   );

@@ -22,11 +22,18 @@ const Form = (props) => {
   
   return (
     
-    <section className="formSection wrapper">
-      <h2>
-        Please select above a sport and a date to display the related event
-      </h2>
+    <section className="formSection">
+      <div className="wrapper">
+      <h3>
+        How to get my scores?
+      </h3>
+      <p>Please fill the form below! Select a sport, a date and click on "Get me scores"!</p>
       <form action="" onSubmit={(event)=>{props.handleSubmit(event,[sportSelected,dateSelected])}}>
+      {props.formError ? (
+        <h2 className="error">
+          <strong>Sorry an incident occurs, please try again later!</strong>
+        </h2>
+      ) : null}
         <label htmlFor="sportSelection" className="sr-only">
           Select a sport
         </label>
@@ -58,6 +65,7 @@ const Form = (props) => {
         </input>
         <button type="submit">Get me scores!</button>
       </form>
+      </div>
     </section>
   );
 };
