@@ -1,27 +1,51 @@
 //EventInfo component
 
 const EventInfo = (props) => {
+  // Transforming the date received in a 12hours format time
+  const dateReceived = `${props.hour}`;
+  // Isolating hours and minutes and storing it in a variable
+  const formattedDate = dateReceived.substring(8, 12);
+  const hour = parseInt(formattedDate.substring(0, 2));
+  const minute = formattedDate.substring(2);
+  // Defining a variable PM if hours sup or equal 12
+  const isPm = hour >= 12;
+  // Formatting to 12 hours format
+  const formattedHour = hour % 12 || 12;
+  // Formatting the hours, if isPm is true I add PM, else I add AM
+  const formattedTime = `${formattedHour}:${minute} ${isPm ? "PM" : "AM"}`;
+
   return (
-    <li>
+    // Returning an LI for every event, with a class of the sport value selected by the user
+    <li className={`${props.sport}`}>
+      {/* Adding competition infos */}
       <div className="leagueInfo">
-        <p>{props.league}</p>
-        <p>{props.tournament}</p>
+        <p className="leagueName">{props.league}</p>
+        <p className="eventName">{props.tournament}</p>
       </div>
-      {props.time !== "FT" && props.time !== "NS" ? (
+      {/* Adding competition date/hours. If date/time is not Full Time or Not Started, then I display a red dot to show that the event is live */}
+      <div className="eventTime">
+      {props.time !== "FT" && props.time !== "NS" && props.time !== "W.O."? (
         <div>
           <div className="liveBlock">
             <div className="dot liveEvent"></div>
-            <p>{props.time}</p>
+            <p className="gameTime">{props.time}</p>
           </div>
         </div>
+      ) : // if time = Full Time, event is done. Then I display only FT and I remove the hour as the event is done
+      props.time === "FT" ? (
+        <p className="gameTime">{props.time}</p>
       ) : (
+        // If the time is Non started, then I display the hour
         <>
-        <p>{props.time}</p>
-        <p>{props.hour}</p>
+          <p className="gameTime">{props.time}</p>
+          <p className="time">{`${formattedTime}`}</p>
         </>
       )}
+      </div>
+      {/* Adding team 1 infos and scores. */}
       <div className="team1Stats">
         <div className="setScore">
+          {/* Adding set scores if they exist (only for tennis) */}
           {props.set1ScoreTeam1 ? (
             <div className="setBox">
               <p className="set">{props.set1ScoreTeam1}</p>
@@ -30,14 +54,17 @@ const EventInfo = (props) => {
             </div>
           ) : null}
         </div>
-        <p>{props.nameTeam1}</p>
+        {/* Adding team 1 name */}
+        <p className="teamName">{props.nameTeam1}</p>
         <div className="score">
-          <p>{props.scoreTeam1}</p>
+          {/* Adding scores team */}
+          <p >{props.scoreTeam1}</p>
         </div>
       </div>
-
+      {/* Adding team 2 infos and scores. */}
       <div className="team2Stats">
         <div className="setScore">
+          {/* Adding set scores if they exist (only for tennis) */}
           {props.set1ScoreTeam2 ? (
             <div className="setBox">
               <p className="set">{props.set1ScoreTeam2}</p>
@@ -46,8 +73,10 @@ const EventInfo = (props) => {
             </div>
           ) : null}
         </div>
-        <p>{props.nameTeam2}</p>
+        {/* Adding team 2 name */}
+        <p className="teamName">{props.nameTeam2}</p>
         <div className="score">
+          {/* Adding team 2 score */}
           <p>{props.scoreTeam2}</p>
         </div>
       </div>

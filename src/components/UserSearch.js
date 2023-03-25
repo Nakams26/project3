@@ -33,7 +33,7 @@ const UserSearch = () => {
         },
       })
         .then((apiData) => {
-          console.log(apiData.data.Stages);
+          //Updating state status of results and api data depending on the result of the call
           setResults(apiData.data.Stages);
           setApiError(false);
         })
@@ -57,7 +57,7 @@ const UserSearch = () => {
   //New function to handle the form submission
   const userChoices = (e, userChoices) => {
     e.preventDefault();
-    //Alert user that he has to select a sport first before submit
+    // If statement to be sure to call the API if the user has selected a sport
     if (userChoices[0] !== "placeholder") {
       //Assign the input value to the sport value
       setSportValue(userChoices[0]);
@@ -76,7 +76,8 @@ const UserSearch = () => {
     <main>
       {/* Running  the function when submitting the form. Passing the api error as props */}
       <Form handleSubmit={userChoices} formError={apiError} />
-      <EventGallery currentEvent={results} />
+      {/* Passing the results and sport value (I need it for the styling) through props*/}
+      <EventGallery currentEvent={results} sportSelected={sportValue}/>
     </main>
   );
 };

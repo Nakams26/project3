@@ -23,7 +23,9 @@ const Form = (props) => {
   return (
     
     <section className="formSection">
-      <div className="wrapper">
+      <div className="wrapper flexForm">
+        
+      <div className="form">
       <h3>
         How to get my scores?
       </h3>
@@ -65,6 +67,15 @@ const Form = (props) => {
         </input>
         <button type="submit">Get me scores!</button>
       </form>
+      </div>
+      <div className="textForm">
+      <h3>
+        How to read my scores?
+      </h3>
+      <p><strong>FT:</strong> Full time <strong>HT:</strong> Half time <strong>NS:</strong> Non started <strong>W.O.:</strong> Walk off </p>
+      <p> <strong>OT:</strong> Overtime <strong>🔴:</strong>  Live event</p>
+      <p><strong>🎾 S1:</strong> Set number 1 | <strong>🏒 P1:</strong> Period number 1 | <strong> 🏀 1Q:</strong> First Quarter</p>
+      </div>
       </div>
     </section>
   );
