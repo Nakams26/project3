@@ -9,9 +9,11 @@ const Header = () => {
         <header>
             <div className="wrapper flexHeader">
                 <div className="textHeader">
-            <h1>What's the score?</h1>
+            <h1>What's the score ?</h1>
+            <div>
             <h2>The perfect app to get sports result</h2>
             <h2>Try it now! </h2>
+            </div>
             </div>
             <div className="imageHeader">
                 <div className="imgContainer"><img className="tennisBall" src={tennisBall} alt="tennis ball" /></div>
