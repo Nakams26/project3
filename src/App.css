@@ -380,5 +380,9 @@ footer {
   box-shadow: none;
   min-width: 340px;
  }
+
+ .eventName {
+  font-size: 1.5rem;
+ }
 }
 
