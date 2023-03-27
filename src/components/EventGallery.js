@@ -21,7 +21,9 @@ const EventGallery = (props) => {
                   league={results.Cnm}
                   tournament={results.Snm}
                   nameTeam1={event.T1[0].Nm}
+                  imageTeam1={event.T1[0].Img}
                   nameTeam2={event.T2[0].Nm}
+                  imageTeam2={event.T2[0].Img}
                   scoreTeam1={event.Tr1}
                   scoreTeam2={event.Tr2}
                   set1ScoreTeam1={event.Tr1S1}

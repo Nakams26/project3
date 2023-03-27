@@ -1,19 +1,34 @@
 //Styles
-import '../App.css';
+import "../App.css";
 
-
+//Import routing
+import { Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //Components
-import UserSearch from './UserSearch';
-import Header from './Header';
-import Footer from './Footer';
+import Home from "./Home";
+import MainPage from "./MainPage";
+import Footer from "./Footer";
 
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <UserSearch />
-      <Footer />
+      <header>
+        <div className="wrapper flexHeader">
+          {/* If you click on the logo at the top left, you get back to the welcome page */}
+          <Link to="/">
+            <h1>WTS?</h1>
+          </Link>
+          <p className="textTitle">BasketBall - Tennis - Hockey</p>
+        </div>
+      </header>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/scores" element={<MainPage />} />
+      </Routes>
+
+      <Footer/>
     </div>
   );
 }

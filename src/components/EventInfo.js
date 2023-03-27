@@ -24,17 +24,17 @@ const EventInfo = (props) => {
       </div>
       {/* Adding competition date/hours. If date/time is not Full Time or Not Started, then I display a red dot to show that the event is live */}
       <div className="eventTime">
-      {props.time !== "FT" && props.time !== "NS" && props.time !== "W.O."? (
+      {props.time !== "FT" && props.time !== "NS"  && props.time !== "W.O."  && props.time !== "OT" && props.time !== "Canc."? (
         <div>
           <div className="liveBlock">
             <div className="dot liveEvent"></div>
             <p className="gameTime">{props.time}</p>
           </div>
         </div>
-      ) : // if time = Full Time, event is done. Then I display only FT and I remove the hour as the event is done
-      props.time === "FT" ? (
+      ) : // if time = Full Time, overtime or cancelled, event is done. Then I display only FT and I remove the hour as the event is done or didn't happened
+      props.time === "FT" || props.time === "OT" || props.time === "Canc."? (
         <p className="gameTime">{props.time}</p>
-      ) : (
+      )  : (
         // If the time is Non started, then I display the hour
         <>
           <p className="gameTime">{props.time}</p>
@@ -55,7 +55,12 @@ const EventInfo = (props) => {
           ) : null}
         </div>
         {/* Adding team 1 name */}
-        <p className="teamName">{props.nameTeam1}</p>
+        <div className="teamInfos">
+          {/* If the sport is tennis, then I don't display images of the team. Else I display the team logo */}
+          {props.sport === "tennis" ? <p className="teamName">{props.nameTeam1}</p> :<> <img className="teamImage" src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam1}`} alt={`logo of ${props.nameTeam1}`} />
+        <p className="teamName">{props.nameTeam1}</p> </> }
+          
+        </div>
         <div className="score">
           {/* Adding scores team */}
           <p >{props.scoreTeam1}</p>
@@ -74,7 +79,11 @@ const EventInfo = (props) => {
           ) : null}
         </div>
         {/* Adding team 2 name */}
-        <p className="teamName">{props.nameTeam2}</p>
+        <div className="teamInfos">
+           {/* If the sport is tennis, then I don't display images of the team. Else I display the team logo */}
+        {props.sport === "tennis" ? <p className="teamName">{props.nameTeam2}</p> :<> <img className="teamImage" src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam2}`} alt={`logo of ${props.nameTeam2}`} />
+        <p className="teamName">{props.nameTeam2}</p> </> }
+        </div>
         <div className="score">
           {/* Adding team 2 score */}
           <p>{props.scoreTeam2}</p>

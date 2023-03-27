@@ -6,197 +6,136 @@ html { box-sizing: border-box; font-size:125%;}
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-  /* General styling */
+/* General styling */
 
-  h1,h2,h3,ul { 
-    margin: 0;
-    padding: 0;
-    font-family: 'Bangers', cursive;
-  }
+h1,
+h2,
+h3,
+ul {
+  margin: 0;
+  padding: 0;
+  font-family: "Bangers", cursive;
+}
 
 html {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 .wrapper {
-    max-width: 1200px;
-    width: 80%;
-    margin: 0 auto;
+  max-width: 1200px;
+  width: 80%;
+  margin: 0 auto;
 }
 ul {
   list-style: none;
   margin: 20px 0;
 }
 img {
-    display: block;
-    height: 100%;
-    width: 100%;
+  display: block;
+  height: 100%;
+  width: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 /* Header styling */
 header {
-  height: 80vh;
-background: linear-gradient(-180deg,rgb(26, 25, 25)  0%, grey 100%);
-
-
+  background-color: black;
 }
-.flexHeader{
-  height: 100%;
+.flexHeader {
   display: flex;
   justify-content: space-between;
-}
-h1{
-  padding-top: 50px;
-  color: black;
-  font-size: 4.5rem;
-  text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue, 4px 2px 1px rgb(97,255,0),
-    3px 3px 1px yellowgreen, 5px 3px 1px blue, 4px 4px 1px rgb(97,255,0),
-    6px 4px 1px yellowgreen, 5px 5px 1px blue, 7px 5px 1px rgb(97,255,0);
-    -webkit-text-stroke: 1px yellow;
+  align-items: center;
+  padding: 20px 0;
 }
 
-h2 {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.7rem;
+h1 {
   color: black;
-  padding: 10px 0;
-  text-shadow: 3px 1px 1px yellow;
-   
+  font-size: 2rem;
+  text-shadow: 3px 1px 1px rgb(97, 255, 0), 2px 2px 1px blue,
+    4px 2px 1px rgb(97, 255, 0);
+  -webkit-text-stroke: 1px white;
 }
-.textHeader{
+
+h1:hover,
+h1:focus {
+}
+
+header p {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.3rem;
+  -webkit-text-stroke: 1px white;
+}
+header a,
+.welcomeSection a {
+  text-decoration: none;
+}
+
+/* Welcome section styling */
+
+.welcomeSection {
+  background-color: black;
+  height: 100vh;
+}
+
+.flexWelcome {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-}
-.imageHeader{
-  display: flex;
-  align-items: flex-end;
-}
-.basketBall{
-  width: 120px;
-  height: 120px;
-  margin: 20px;
-  animation: bounceBasket 4s infinite;
-  position:relative;
-  margin-left: 50px;
-}
-.tennisBall{
-  width: 60px;
-  height: 60px;
-  margin: 20px;
-  animation: bounceTennis 2.8s infinite;
-  position:relative;
+  align-items: center;
+  height: 100%;
 }
 
-.hockeyStick{
-  width: 200px;
-  height:350px;
-  margin: 20px;
-  animation: flipHockey 6s infinite;
-  position:relative;
-  margin-left: 50px;
+.welcomeSection h2 {
+  color: white;
+  text-align: center;
+  font-size: 7rem;
+  margin-top: 50px;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 3px 1px 1px rgb(97, 255, 0), 2px 2px 1px blue,
+    4px 2px 1px rgb(97, 255, 0), 3px 3px 1px rgb(97, 255, 0), 5px 3px 1px blue,
+    4px 4px 1px rgb(97, 255, 0), 3px 1px 1px rgb(97, 255, 0), 2px 2px 1px blue,
+    4px 2px 1px rgb(97, 255, 0);
+}
+.welcomeSection p {
+  font-size: 2rem;
+  text-align: center;
+  -webkit-text-stroke: 1px white;
+}
+.getIn {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+  color: white;
+  -webkit-text-stroke: 1px white;
+  border: 2px solid white;
+  padding: 5px 30px;
+  width: 250px;
 }
 
-@keyframes bounceTennis {
-  0%{bottom:0;
-    transform: rotate(0deg);
- }
- 10%{bottom:80px;
+.getIn:hover,
+.getIn:focus {
+  background-color: white;
+  color: black;
+  border: 2px solid rgb(97, 255, 0);
 }
- 20%{bottom:0px;
-}
- 30%{bottom:80px;
- }
- 40%{bottom:0px;
-}
- 50%{bottom:80px;
-}
- 60%{bottom:0px;
-}
- 70%{bottom:80px;
-}
- 80%{bottom:0px;
-}
-  90%{bottom:80px;
-}  
- 100%{bottom:0px;
-  transform: rotate(359deg);
-}
-} 
 
-@keyframes bounceBasket {
-  0%{bottom:0;
-    transform: rotate(0deg);
- }
- 10%{bottom:200px;
-}
- 20%{bottom:0px;
-}
- 30%{bottom:200px;
- }
- 40%{bottom:0px;
-}
- 50%{bottom:200px;
-}
- 60%{bottom:0px;
-}
- 70%{bottom:200px;
-}
- 80%{bottom:0px;
-}
-  90%{bottom:200px;
-}  
- 100%{bottom:0px;
-  transform: rotate(-359deg);
-}
-} 
-
-@keyframes flipHockey {
-  0%{
-    transform: rotate(0deg);
- }
- 20%{
-  transform: rotate(-20deg);
-}
-40%{
-  transform: rotate(-10deg);
-}
-60%{
-  transform: rotate(60deg);
-}
-80%{
-  transform: rotate(-20deg);
-}
-100%{
-  transform: rotate(10deg);
-}
-}
-/* Main styling */
-/* Display for and result side by side in my main */
-/* main {
-  display: flex;
-
-} */
 /* Main styling */
 main {
-background: linear-gradient(-180deg, grey 50%, black 100%);
-padding-top: 50px;
-  padding-bottom: 20px;
+  background: linear-gradient(-180deg, grey 50%, white 100%);
+  padding-top: 50px;
+  padding-bottom: 170px;
 }
+
 /* Styling the form */
-.formSection h3, .formSection p{
+.formSection h3,
+.formSection p {
   text-align: center;
 }
 .flexForm {
-  border-top: 1px solid black;
- display: flex;
+  display: flex;
 }
-.textForm{
+.textForm {
   width: 50%;
 }
 
@@ -206,27 +145,26 @@ padding-top: 50px;
   align-items: center;
   width: 50%;
 }
-h3{
-  margin: 50px 0;
-  color: yellow;
+h3 {
+  color: black;
   font-size: 2rem;
-  -webkit-text-stroke: 1px black;
-  text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue, 4px 2px 1px rgb(97,255,0),
-  3px 3px 1px yellowgreen, 5px 3px 1px blue, 4px 4px 1px rgb(97,255,0);
-
+  -webkit-text-stroke: 1px white;
+  text-shadow: 3px 1px 1px rgb(97, 255, 0);
 }
 form {
   display: flex;
 }
-.form p, .textForm p {
-  font-family: 'Roboto', sans-serif;
-
+.form p,
+.textForm p {
+  font-family: "Roboto", sans-serif;
 }
-select, input, button {
+select,
+input,
+button {
   text-align: center;
   padding: 10px;
   margin: 10px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 /* Gallery styling */
@@ -234,10 +172,9 @@ ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
 }
 /* Styling global Li */
-li{
+li {
   padding: 20px;
   margin: 10px;
   width: calc((100% / 2) - 20px);
@@ -261,92 +198,54 @@ li{
   background-position: center;
   background-size: cover;
 }
-
+/* Styling basketball Li */
 .basketball {
   background-image: url(./assets/186509526.jpg);
   background-position: center;
   background-size: cover;
 }
 
-.leagueInfo{
+/* League infos styling */
+.leagueInfo {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
 }
 
-.leagueName{
-  font-size: 1.5rem;
+.leagueName {
+  font-size: 1.7rem;
   margin: 0;
   color: black;
-  -webkit-text-stroke: 1px yellow;
-  text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue, 4px 2px 1px rgb(97,255,0),
-  3px 3px 1px yellowgreen, 5px 3px 1px blue, 4px 4px 1px rgb(97,255,0);
-  
+  -webkit-text-stroke: 1px white;
 }
-.eventName{
+.eventName {
   font-size: 2.2rem;
   margin: 0;
   color: black;
-  -webkit-text-stroke: 1px rgb(97,255,0);
-  text-shadow: 3px 1px 1px white, 2px 2px 1px blue, 4px 2px 1px rgb(97,255,0),
-  3px 3px 1px white, 5px 3px 1px blue, 4px 4px 1px rgb(97,255,0);
+  -webkit-text-stroke: 1px rgb(97, 255, 0);
+  text-shadow: 3px 1px 1px white, 2px 2px 1px blue, 4px 2px 1px rgb(97, 255, 0),
+    3px 3px 1px white, 5px 3px 1px blue, 4px 4px 1px rgb(97, 255, 0);
 }
-.eventTime{
+
+/* Event time styling */
+.eventTime {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
-  -webkit-text-stroke: 1px black;
-  font-family: 'Roboto', sans-serif;
+  -webkit-text-stroke: 1px white;
+  font-family: "Roboto", sans-serif;
 }
-.gameTime{
+.gameTime {
   font-size: 1.5rem;
 }
-.time{
+.time {
   font-size: 1.7rem;
 }
-.liveBlock{
+.liveBlock {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
-
-.team1Stats, .team2Stats {
-  display: flex;
-}
-.score p, .setBox p {
-  font-size: 1.5rem;
-  margin: 10px 0;
-  -webkit-text-stroke: 1px black;
-}
-
-.teamName{
-  font-size: 1.6rem;
-  margin: 10px 0;
-  color: black;
-  -webkit-text-stroke: 1px white;
-  text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue, 4px 2px 1px rgb(97,255,0),
-  3px 3px 1px yellowgreen, 5px 3px 1px yellow, 4px 4px 1px rgb(97,255,0);
-}
-.setBox {
-  display: flex;
-}
-
-.set {
-  padding: 0 10px;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-}
-.score {
-  flex-grow: 1;
-  text-align: right;
-  color: white;
-  font-family: 'Roboto', sans-serif;
-  
-}
-
-
-
 
 /* //Styling the red dot for live events. Used From code pen https://www.florin-pop.com/blog/2019/03/css-pulse-effect/*/
 .dot {
@@ -360,7 +259,7 @@ li{
   animation: pulse-black 2s infinite;
 }
 
-.liveEvent{
+.liveEvent {
   background: rgba(255, 82, 82, 1);
   box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
   animation: pulse 2s infinite;
@@ -370,18 +269,62 @@ li{
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0.7);
   }
-  
+
   70% {
     transform: scale(1);
     box-shadow: 0 0 0 10px rgba(255, 82, 82, 0);
   }
-  
+
   100% {
     transform: scale(0.95);
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
   }
 }
 
+/* teams infos styling */
+.team1Stats,
+.team2Stats {
+  display: flex;
+}
+.score p,
+.setBox p {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: black;
+  -webkit-text-stroke: 1px white;
+}
+.teamInfos {
+  display: flex;
+  align-items: center;
+}
+.teamImage {
+  width: 70px;
+  padding: 10px;
+}
+.teamName {
+  font-size: 1.6rem;
+  margin: 10px 0;
+  color: black;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue,
+    4px 2px 1px rgb(97, 255, 0), 3px 3px 1px yellowgreen, 5px 3px 1px yellow,
+    4px 4px 1px rgb(97, 255, 0);
+}
+/* Scores styling */
+.setBox {
+  display: flex;
+}
+.set {
+  padding: 0 10px;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
+.score {
+  flex-grow: 1;
+  text-align: right;
+  color: white;
+  font-family: "Roboto", sans-serif;
+}
 
 
 /* Footer styling */
@@ -389,9 +332,53 @@ li{
 footer {
   text-align: center;
   text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  padding: 30px;
-  color: yellowgreen;
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
   background-color: black;
-    -webkit-text-stroke: 1px yellow;
+  -webkit-text-stroke: 1px white;
 }
+
+
+/* Media Queries */
+
+@media  (max-width: 950px) {
+  /* Header */
+  .flexHeader{
+    flex-direction: column;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+ /* Welcome section */
+ .welcomeSection{
+  height: 70vh;
+ }
+ .welcomeSection h2{
+  margin-top: 10px;
+  font-size: 4rem;
+ }
+ .welcomeSection p {
+  font-size: 1.5rem;
+ }
+
+ /* Form section */
+ .flexForm{
+  flex-direction: column
+ }
+ form {
+  flex-direction: column
+ }
+ .form, .textForm {
+  width: 100%;
+ }
+ .textForm {
+  margin-top: 40px;
+ }
+
+ /* Gallery section */
+ li {
+  box-shadow: none;
+  min-width: 340px;
+ }
+}
+
