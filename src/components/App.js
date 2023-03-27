@@ -7,8 +7,9 @@ import { Link } from "react-router-dom";
 
 //Components
 import Home from "./Home";
-import MainPage from "./MainPage";
+import UserSearch from "./UserSearch";
 import Footer from "./Footer";
+import Error from "./Error";
 
 function App() {
   return (
@@ -25,7 +26,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/scores" element={<MainPage />} />
+        <Route path="/scores" element={<UserSearch />} />
+        <Route path="*" element={<Error />} />
       </Routes>
 
       <Footer/>

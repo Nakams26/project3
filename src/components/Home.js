@@ -11,7 +11,7 @@ const Home = () => {
         <div className="wrapper flexWelcome">
       <h2>What's the Score?</h2>
       <p>Sports results, on demand.</p>
-      {/* Click on get in to have access to the scores page */}
+      {/* Click on "get in" to have access to the scores page */}
       <Link to="/scores">
         <p className="getIn">Get in!</p>
       </Link>

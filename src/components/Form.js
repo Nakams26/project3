@@ -1,4 +1,4 @@
-//Form component
+//Form component. This contain the form and some explanation text
 //import useState
 import { useState } from "react";
 

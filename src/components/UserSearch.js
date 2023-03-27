@@ -1,3 +1,5 @@
+// This component is the parent component for the form and Event gallery. I do my API call here and pass data through props
+
 //Import useState
 import { useEffect, useState } from "react";
 //Import axios

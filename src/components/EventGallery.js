@@ -1,4 +1,5 @@
-//EventGallery Component
+//EventGallery Component. This component display the UL that receive every data and return LI
+
 //Import Event infos
 import EventInfo from "./EventInfo";
 

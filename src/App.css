@@ -325,8 +325,12 @@ li {
   color: white;
   font-family: "Roboto", sans-serif;
 }
-
-
+/* //Error styling */
+h4 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Roboto", sans-serif;
+}
 /* Footer styling */
 
 footer {

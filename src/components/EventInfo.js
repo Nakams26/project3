@@ -1,4 +1,4 @@
-//EventInfo component
+//EventInfo component: This component has all the LI created with the API data
 
 const EventInfo = (props) => {
   // Transforming the date received in a 12hours format time
