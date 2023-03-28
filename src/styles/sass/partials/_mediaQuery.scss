@@ -26,15 +26,12 @@
     .form,
     .textForm {
       width: 100%;
+      margin: 40px 0;
     }
   }
   form {
     flex-direction: column;
     align-items: center;
-  }
-
-  .textForm {
-    margin-top: 40px;
   }
 
   /* Gallery section */
