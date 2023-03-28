@@ -1,0 +1,59 @@
+/* Media Queries */
+
+@media (max-width: 950px) {
+  /* Header */
+  .flexHeader {
+    flex-direction: column;
+  }
+  header p {
+    font-size: 1.2rem;
+  }
+  /* Welcome section */
+  .welcomeSection {
+    height: 70vh;
+    h2 {
+      margin-top: 10px;
+      font-size: 4rem;
+    }
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Form section */
+  .flexForm {
+    flex-direction: column;
+    .form,
+    .textForm {
+      width: 100%;
+    }
+  }
+  form {
+    flex-direction: column;
+  }
+
+  .textForm {
+    margin-top: 40px;
+  }
+
+  /* Gallery section */
+
+  ul {
+    li {
+      box-shadow: none;
+      min-width: 340px;
+      .leagueInfo {
+        .eventName {
+          font-size: 1.5rem;
+          text-shadow: none;
+        }
+      }
+      .team1Stats,
+      .team2Stats {
+        .teamName {
+          text-shadow: none;
+        }
+      }
+    }
+  }
+}

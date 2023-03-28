@@ -1,0 +1,46 @@
+/* Styling the form */
+.formSection {
+  text-align: center;
+  .flexForm {
+    display: flex;
+  }
+  .textForm {
+    width: 50%;
+    margin-left: 20px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin-right: 20px;
+  }
+  h3 {
+    color: black;
+    font-size: 2rem;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 3px 1px 1px rgb(97, 255, 0);
+  }
+}
+
+form {
+  display: flex;
+  p {
+    font-family: "Roboto", sans-serif;
+  }
+  select,
+  input,
+  button {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    font-family: "Roboto", sans-serif;
+    color: white;
+    background-color: black;
+    border: 1px solid rgb(97, 255, 0);
+    transition: 0.2s;
+  }
+  button:active {
+    animation: shake 0.5s infinite;
+  }
+}

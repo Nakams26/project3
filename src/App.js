@@ -1,15 +1,16 @@
 //Importing Styles
-import "../App.css";
+
+import "./styles/sass/style.scss"
 
 //Importing routes and links
 import { Route, Routes } from "react-router-dom";
 
 //Importing Components
-import Header from "./Header";
-import Home from "./Home";
-import UserSearch from "./UserSearch";
-import Footer from "./Footer";
-import Error from "./Error";
+import Header from "./components/Header";
+import Home from "./components/Home";
+import UserSearch from "./components/UserSearch";
+import Footer from "./components/Footer";
+import Error from "./components/Error";
 
 function App() {
   return (

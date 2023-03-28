@@ -1,0 +1,26 @@
+/* Header styling */
+header {
+  background-color: black;
+  h1 {
+    color: black;
+    font-size: 2rem;
+    text-shadow: 3px 1px 1px rgb(97, 255, 0), 2px 2px 1px blue,
+      4px 2px 1px rgb(97, 255, 0);
+    -webkit-text-stroke: 1px white;
+  }
+  p {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.3rem;
+    -webkit-text-stroke: 1px white;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+
+.flexHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}

@@ -1,0 +1,160 @@
+/* Gallery styling */
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  /* Styling global Li */
+  li {
+    padding: 20px;
+    margin: 10px;
+    width: calc((100% / 2) - 20px);
+    min-width: 400px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px 5px white;
+  }
+  /* Styling tennis Li */
+  .tennis {
+    background-image: url(/assets/ben-hershey-K9HgyI3qmqA-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+
+  /* Styling hockey Li */
+  .hockey {
+    background-image: url(/assets/570898-hockey-background.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+  /* Styling basketball Li */
+  .basketball {
+    background-image: url(/assets/186509526.jpg);
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* League infos styling */
+.leagueInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  .leagueName {
+    font-size: 1.7rem;
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px white;
+  }
+  .eventName {
+    font-size: 2.2rem;
+    margin: 0;
+    color: black;
+    -webkit-text-stroke: 1px rgb(97, 255, 0);
+    text-shadow: 3px 1px 1px white, 2px 2px 1px blue,
+      4px 2px 1px rgb(97, 255, 0), 3px 3px 1px white, 5px 3px 1px blue,
+      4px 4px 1px rgb(97, 255, 0);
+  }
+}
+
+/* Event time styling */
+.eventTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  -webkit-text-stroke: 1px white;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 1px 2px 2px rgb(97, 255, 0);
+  .gameTime {
+    font-size: 1.5rem;
+  }
+  .time {
+    font-size: 1.7rem;
+  }
+  .liveBlock {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  /* //Styling the red dot for live events. Used From code pen https://www.florin-pop.com/blog/2019/03/css-pulse-effect/*/
+  .dot {
+    border-radius: 50%;
+    margin: 10px;
+    height: 20px;
+    width: 20px;
+  }
+  .live {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .liveEvent {
+    background: rgba(255, 82, 82, 1);
+    box-shadow: 0 0 0 0 rgba(255, 82, 82, 1);
+    animation: pulse 2s infinite;
+  }
+}
+
+/* teams infos styling */
+.team1Stats,
+.team2Stats {
+  display: flex;
+  .teamInfos {
+    display: flex;
+    align-items: center;
+  }
+  .teamImage {
+    width: 70px;
+    padding: 10px;
+  }
+  .teamName {
+    font-size: 1.6rem;
+    margin: 10px 0;
+    color: black;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 3px 1px 1px yellowgreen, 2px 2px 1px blue,
+      4px 2px 1px rgb(97, 255, 0), 3px 3px 1px yellowgreen, 5px 3px 1px yellow,
+      4px 4px 1px rgb(97, 255, 0);
+  }
+}
+//Scores styling
+.score {
+  flex-grow: 1;
+  text-align: right;
+  p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: white;
+    -webkit-text-stroke: 1px white;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 1px 2px 2px rgb(97, 255, 0);
+  }
+}
+
+//set score styling (tennis only)
+.setBox {
+  display: flex;
+  p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: white;
+    -webkit-text-stroke: 1px white;
+    font-family: "Roboto", sans-serif;
+    text-shadow: 1px 2px 2px rgb(97, 255, 0);
+  }
+  .set {
+    padding: 0 10px;
+  }
+}
+
+/* //Error styling */
+h4 {
+  text-align: center;
+  font-size: 5rem;
+  font-family: "Roboto", sans-serif;
+}
