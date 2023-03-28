@@ -251,8 +251,10 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  color: white;
   -webkit-text-stroke: 1px white;
   font-family: "Roboto", sans-serif;
+  text-shadow: 1px 2px 2px rgb(97, 255, 0);
 }
 .gameTime {
   font-size: 1.5rem;
@@ -311,8 +313,10 @@ li {
 .setBox p {
   font-size: 1.5rem;
   margin: 10px 0;
-  color: black;
+  color: white;
   -webkit-text-stroke: 1px white;
+  font-family: "Roboto", sans-serif;
+  text-shadow: 1px 2px 2px rgb(97, 255, 0);
 }
 .teamInfos {
   display: flex;
@@ -337,14 +341,10 @@ li {
 }
 .set {
   padding: 0 10px;
-  color: white;
-  font-family: "Roboto", sans-serif;
 }
 .score {
   flex-grow: 1;
   text-align: right;
-  color: white;
-  font-family: "Roboto", sans-serif;
 }
 /* //Error styling */
 h4 {

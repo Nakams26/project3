@@ -69,14 +69,17 @@ const EventInfo = (props) => {
             <p className="teamName">{props.nameTeam1}</p>
           ) : (
             <>
-              <div className="teamImageContainer">
-                <img
-                  className="teamImage"
-                  src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam1}`}
-                  alt={`logo of ${props.nameTeam1}`}
-                />
-              </div>
-              <p className="teamName">{props.nameTeam1}</p>{" "}
+              {/* if the logo name is different than undefined, then I display it */}
+              {props.imageTeam1 !== undefined ? (
+                <div className="teamImageContainer">
+                  <img
+                    className="teamImage"
+                    src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam1}`}
+                    alt={`logo of ${props.nameTeam1}`}
+                  />
+                </div>
+              ) : null}
+              <p className="teamName">{props.nameTeam1}</p>
             </>
           )}
         </div>
@@ -104,13 +107,16 @@ const EventInfo = (props) => {
             <p className="teamName">{props.nameTeam2}</p>
           ) : (
             <>
-              <div className="teamImageContainer">
-                <img
-                  className="teamImage"
-                  src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam2}`}
-                  alt={`logo of ${props.nameTeam2}`}
-                />
-              </div>
+              {/* if the logo name is different than undefined, then I display it */}
+              {props.imageTeam2 !== undefined ? (
+                <div className="teamImageContainer">
+                  <img
+                    className="teamImage"
+                    src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam2}`}
+                    alt={`logo of ${props.nameTeam2}`}
+                  />
+                </div>
+              ) : null}
               <p className="teamName">{props.nameTeam2}</p>{" "}
             </>
           )}

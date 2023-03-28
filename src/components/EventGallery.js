@@ -20,12 +20,12 @@ const EventGallery = (props) => {
             // Creating a variable for every events (Events are array as well)
             const events = results.Events;
             //Mapping through every events. Adding index to use it as Key, because I don't have any consistent id in the API response. I tried multiple but always had errors because of identical key
-            return events.map((event, index) => {
+            return events.map((event) => {
               return (
                 <EventInfo
                   // Using props to pass every data that I need on my page
                   // Passing the individual key for each LI
-                  key={index}
+                  key={event.Eid}
                   // Passing league infos
                   league={results.Cnm}
                   tournament={results.Snm}
