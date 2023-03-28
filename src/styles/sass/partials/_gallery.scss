@@ -86,12 +86,6 @@ ul {
     height: 20px;
     width: 20px;
   }
-  .live {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-  }
 
   .liveEvent {
     background: rgba(255, 82, 82, 1);
@@ -99,6 +93,7 @@ ul {
     animation: pulse 2s infinite;
   }
 }
+
 
 /* teams infos styling */
 .team1Stats,
