@@ -1,5 +1,4 @@
 // Footer component
-
 const Footer = () => {
   return (
     <footer>

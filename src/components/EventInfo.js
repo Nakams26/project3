@@ -1,7 +1,7 @@
-//EventInfo component: This component has all the LI created with the API data
+//EventInfo component: This component display LI created with the API data
 
 const EventInfo = (props) => {
-  // Transforming the date received in a 12hours format time
+  // Transforming the date received in a 12hours format time (I receive YYYYMMDDHHMMSS,  need to transform it in HH:MM AM or PM)
   const dateReceived = `${props.hour}`;
   // Isolating hours and minutes and storing it in a variable
   const formattedDate = dateReceived.substring(8, 12);
@@ -22,25 +22,33 @@ const EventInfo = (props) => {
         <p className="leagueName">{props.league}</p>
         <p className="eventName">{props.tournament}</p>
       </div>
-      {/* Adding competition date/hours. If date/time is not Full Time or Not Started, then I display a red dot to show that the event is live */}
+      {/* Adding competition date/hours. If date/time is not Full Time, Not Started, Walk off, cancelled, retired or overtime, then I display a red dot to show that the event is live */}
       <div className="eventTime">
-      {props.time !== "FT" && props.time !== "NS"  && props.time !== "W.O."  && props.time !== "OT" && props.time !== "Canc."? (
-        <div>
-          <div className="liveBlock">
-            <div className="dot liveEvent"></div>
-            <p className="gameTime">{props.time}</p>
+        {props.time !== "FT" &&
+        props.time !== "NS" &&
+        props.time !== "W.O." &&
+        props.time !== "OT" &&
+        props.time !== "Canc." &&
+        props.time !== "Ret." ? (
+          <div>
+            <div className="liveBlock">
+              <div className="dot liveEvent"></div>
+              <p className="gameTime">{props.time}</p>
+            </div>
           </div>
-        </div>
-      ) : // if time = Full Time, overtime or cancelled, event is done. Then I display only FT and I remove the hour as the event is done or didn't happened
-      props.time === "FT" || props.time === "OT" || props.time === "Canc."? (
-        <p className="gameTime">{props.time}</p>
-      )  : (
-        // If the time is Non started, then I display the hour
-        <>
+        ) : // if time = Full Time, overtime, retired or cancelled, event is done. Then I display only FT, OT or cancelled and I remove the hour as the event is done or didn't happened
+        props.time === "FT" ||
+          props.time === "OT" ||
+          props.time === "Canc." ||
+          props.time === "Ret." ? (
           <p className="gameTime">{props.time}</p>
-          <p className="time">{`${formattedTime}`}</p>
-        </>
-      )}
+        ) : (
+          // If the time is Non started, then I display the hour
+          <>
+            <p className="gameTime">{props.time}</p>
+            <p className="time">{`${formattedTime}`}</p>
+          </>
+        )}
       </div>
       {/* Adding team 1 infos and scores. */}
       <div className="team1Stats">
@@ -56,14 +64,25 @@ const EventInfo = (props) => {
         </div>
         {/* Adding team 1 name */}
         <div className="teamInfos">
-          {/* If the sport is tennis, then I don't display images of the team. Else I display the team logo */}
-          {props.sport === "tennis" ? <p className="teamName">{props.nameTeam1}</p> :<> <img className="teamImage" src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam1}`} alt={`logo of ${props.nameTeam1}`} />
-        <p className="teamName">{props.nameTeam1}</p> </> }
-          
+          {/* If the sport is tennis, then I don't display images of the team (I don't receive image from the api for tennis). Else I display the team logo */}
+          {props.sport === "tennis" ? (
+            <p className="teamName">{props.nameTeam1}</p>
+          ) : (
+            <>
+              <div className="teamImageContainer">
+                <img
+                  className="teamImage"
+                  src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam1}`}
+                  alt={`logo of ${props.nameTeam1}`}
+                />
+              </div>
+              <p className="teamName">{props.nameTeam1}</p>{" "}
+            </>
+          )}
         </div>
         <div className="score">
-          {/* Adding scores team */}
-          <p >{props.scoreTeam1}</p>
+          {/* Adding team 1 global score */}
+          <p>{props.scoreTeam1}</p>
         </div>
       </div>
       {/* Adding team 2 infos and scores. */}
@@ -80,12 +99,24 @@ const EventInfo = (props) => {
         </div>
         {/* Adding team 2 name */}
         <div className="teamInfos">
-           {/* If the sport is tennis, then I don't display images of the team. Else I display the team logo */}
-        {props.sport === "tennis" ? <p className="teamName">{props.nameTeam2}</p> :<> <img className="teamImage" src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam2}`} alt={`logo of ${props.nameTeam2}`} />
-        <p className="teamName">{props.nameTeam2}</p> </> }
+          {/* If the sport is tennis, then I don't display images of the team. Else I display the team logo */}
+          {props.sport === "tennis" ? (
+            <p className="teamName">{props.nameTeam2}</p>
+          ) : (
+            <>
+              <div className="teamImageContainer">
+                <img
+                  className="teamImage"
+                  src={`https://lsm-static-prod.livescore.com/medium/${props.imageTeam2}`}
+                  alt={`logo of ${props.nameTeam2}`}
+                />
+              </div>
+              <p className="teamName">{props.nameTeam2}</p>{" "}
+            </>
+          )}
         </div>
         <div className="score">
-          {/* Adding team 2 score */}
+          {/* Adding team 2 global score */}
           <p>{props.scoreTeam2}</p>
         </div>
       </div>
