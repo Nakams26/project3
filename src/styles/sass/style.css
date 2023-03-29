@@ -353,7 +353,6 @@ ul li {
   margin: 10px;
   width: calc(50% - 20px);
   min-width: 400px;
-  border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -429,13 +428,6 @@ ul .basketball {
   animation: pulse 2s infinite;
 }
 
-.live {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 /* teams infos styling */
 .team1Stats,
 .team2Stats {
@@ -505,6 +497,23 @@ h4 {
 .formSection .textForm {
   width: 50%;
   margin-left: 20px;
+}
+.formSection .textForm .live {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.formSection .textForm .live .dot {
+  border-radius: 50%;
+  margin: 10px;
+  height: 20px;
+  width: 20px;
+}
+.formSection .textForm .live .liveEvent {
+  background: rgb(255, 82, 82);
+  box-shadow: 0 0 0 0 rgb(255, 82, 82);
+  animation: pulse 2s infinite;
 }
 .formSection .form {
   display: flex;
@@ -642,12 +651,11 @@ footer {
   .flexForm .form,
   .flexForm .textForm {
     width: 100%;
+    margin: 40px 0;
   }
   form {
     flex-direction: column;
-  }
-  .textForm {
-    margin-top: 40px;
+    align-items: center;
   }
   /* Gallery section */
   ul li {
