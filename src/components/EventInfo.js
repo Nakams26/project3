@@ -31,7 +31,8 @@ const EventInfo = (props) => {
         props.time !== "Canc." &&
         props.time !== "Ret." &&
         props.time !== "Int." &&
-        props.time !== "ToFi." ? (
+        props.time !== "ToFi." &&
+        props.time !== "Postp." ? (
           <div>
             <div className="liveBlock">
               <div className="dot liveEvent"></div>
@@ -44,7 +45,8 @@ const EventInfo = (props) => {
           props.time === "Canc." ||
           props.time === "Ret." ||
           props.time === "Int." ||
-          props.time === "ToFi." ? (
+          props.time === "ToFi." ||
+          props.time === "Postp." ? (
           <p className="gameTime">{props.time}</p>
         ) : (
           // If the time is Non started, then I display the hour

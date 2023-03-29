@@ -49,6 +49,7 @@ const Form = (props) => {
                 Select a sport
               </option>
               <option value="basketball">Basket-Ball</option>
+              <option value="soccer">Soccer</option>
               <option value="hockey">Hockey</option>
               <option value="tennis">Tennis</option>
             </select>
@@ -73,16 +74,13 @@ const Form = (props) => {
           <div className="flexText">
             <div className="textExplainOne">
               <p>
-                <strong>FT:</strong> Full time
+                <strong>NS:</strong> Not started
               </p>
               <p>
                 <strong>HT:</strong> Half time
               </p>
               <p>
-                <strong>NS:</strong> Not started
-              </p>
-              <p>
-                <strong>W.O.:</strong> Walk off
+                <strong>FT:</strong> Full time
               </p>
               <p>
                 <strong>OT:</strong> Overtime
@@ -93,14 +91,20 @@ const Form = (props) => {
               <p>
                 <strong>Int.:</strong> Interrupted
               </p>
+              <p>
+                <strong>Postp: </strong> Postponed
+              </p>
             </div>
 
             <div className="textExplainTwo">
               <p>
+                <strong>W.O.:</strong> Walk off
+              </p>
+              <p>
                 <strong>Ret: </strong> Retired
               </p>
               <p>
-                <strong>ToFi. : </strong> To finish
+                <strong>ToFi: </strong> To finish
               </p>
               <p>
                 <strong>🎾 S1:</strong> First set

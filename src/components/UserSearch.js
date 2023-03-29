@@ -26,6 +26,7 @@ const UserSearch = () => {
     if (
       sportValue === "basketball" ||
       sportValue === "tennis" ||
+      sportValue === "soccer" ||
       sportValue === "hockey"
     ) {
       axios({

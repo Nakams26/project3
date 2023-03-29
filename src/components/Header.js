@@ -9,7 +9,7 @@ const Header = () => {
         <Link to="/">
           <h1>WTS?</h1>
         </Link>
-        <p className="textTitle">BasketBall - Tennis - Hockey</p>
+        <p className="textTitle">BasketBall - Soccer - Hockey - Tennis</p>
       </div>
     </header>
   );
