@@ -4,7 +4,7 @@
 //Import Link
 import { Link } from "react-router-dom";
 
-const Home = () => {
+const WelcomePage = () => {
   return (
     <section className="welcomeSection">
       <div className="wrapper flexWelcome">
@@ -19,4 +19,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default WelcomePage;

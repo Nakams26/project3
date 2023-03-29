@@ -22,25 +22,29 @@ const EventInfo = (props) => {
         <p className="leagueName">{props.league}</p>
         <p className="eventName">{props.tournament}</p>
       </div>
-      {/* Adding competition date/hours. If date/time is not Full Time, Not Started, Walk off, cancelled, retired or overtime, then I display a red dot to show that the event is live */}
+      {/* Adding competition date/hours. If date/time is not Full Time, Not Started, Walk off, cancelled, retired,interrupted to finish or overtime, then I display a red dot to show that the event is live */}
       <div className="eventTime">
         {props.time !== "FT" &&
         props.time !== "NS" &&
         props.time !== "W.O." &&
         props.time !== "OT" &&
         props.time !== "Canc." &&
-        props.time !== "Ret." ? (
+        props.time !== "Ret." &&
+        props.time !== "Int." &&
+        props.time !== "ToFi." ? (
           <div>
             <div className="liveBlock">
               <div className="dot liveEvent"></div>
               <p className="gameTime">{props.time}</p>
             </div>
           </div>
-        ) : // if time = Full Time, overtime, retired or cancelled, event is done. Then I display only FT, OT or cancelled and I remove the hour as the event is done or didn't happened
+        ) : // if time = Full Time, overtime, retired, interrupted , to finish or cancelled, then I display only the status and I remove the hour as the event is done or didn't happened
         props.time === "FT" ||
           props.time === "OT" ||
           props.time === "Canc." ||
-          props.time === "Ret." ? (
+          props.time === "Ret." ||
+          props.time === "Int." ||
+          props.time === "ToFi." ? (
           <p className="gameTime">{props.time}</p>
         ) : (
           // If the time is Non started, then I display the hour

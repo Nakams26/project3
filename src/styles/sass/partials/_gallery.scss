@@ -54,6 +54,7 @@ ul {
     text-shadow: 3px 1px 1px white, 2px 2px 1px blue,
       4px 2px 1px rgb(97, 255, 0), 3px 3px 1px white, 5px 3px 1px blue,
       4px 4px 1px rgb(97, 255, 0);
+    text-align: right;
   }
 }
 
@@ -92,7 +93,6 @@ ul {
     animation: pulse 2s infinite;
   }
 }
-
 
 /* teams infos styling */
 .team1Stats,

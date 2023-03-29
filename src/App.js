@@ -7,10 +7,10 @@ import { Route, Routes } from "react-router-dom";
 
 //Importing Components
 import Header from "./components/Header";
-import Home from "./components/Home";
 import UserSearch from "./components/UserSearch";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
+import WelcomePage from "./components/WelcomePage";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
       <Header/>
       {/* Adding routes */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<WelcomePage />} />
         <Route path="/scores" element={<UserSearch />} />
         <Route path="*" element={<Error />} />
       </Routes>

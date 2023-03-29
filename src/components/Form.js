@@ -70,19 +70,52 @@ const Form = (props) => {
         {/* Adding text explanation to help read results */}
         <div className="textForm">
           <h3>How to read my scores?</h3>
-          <p>
-            <strong>FT:</strong> Full time | <strong>HT:</strong> Half time |
-            <strong> NS:</strong> Not started | <strong>W.O.:</strong> Walk off
-          </p>
-          <p>
-            <strong>OT:</strong> Overtime | <strong>Canc:</strong> Cancelled |
-            <strong> Ret: </strong> Retired
-          </p>
-          <div className="live"> <div className="dot liveEvent"></div>: Live event</div>
-          <p>
-            <strong>🎾 S1:</strong> Set number 1 | <strong>🏒 P1:</strong>{" "}
-            Period number 1 | <strong> 🏀 1Q:</strong> First Quarter
-          </p>
+          <div className="flexText">
+            <div className="textExplainOne">
+              <p>
+                <strong>FT:</strong> Full time
+              </p>
+              <p>
+                <strong>HT:</strong> Half time
+              </p>
+              <p>
+                <strong>NS:</strong> Not started
+              </p>
+              <p>
+                <strong>W.O.:</strong> Walk off
+              </p>
+              <p>
+                <strong>OT:</strong> Overtime
+              </p>
+              <p>
+                <strong>Canc:</strong> Cancelled
+              </p>
+              <p>
+                <strong>Int.:</strong> Interrupted
+              </p>
+            </div>
+
+            <div className="textExplainTwo">
+              <p>
+                <strong>Ret: </strong> Retired
+              </p>
+              <p>
+                <strong>ToFi. : </strong> To finish
+              </p>
+              <p>
+                <strong>🎾 S1:</strong> First set
+              </p>
+              <p>
+                <strong>🏒 P1:</strong> First period
+              </p>
+              <p className="quarter">
+                <strong> 🏀 1Q:</strong> First Quarter
+              </p>
+              <div className="live">
+                <div className="dot liveEvent"></div>Live event
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

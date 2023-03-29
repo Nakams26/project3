@@ -502,7 +502,7 @@ h4 {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: right;
 }
 .formSection .textForm .live .dot {
   border-radius: 50%;
@@ -514,6 +514,17 @@ h4 {
   background: rgb(255, 82, 82);
   box-shadow: 0 0 0 0 rgb(255, 82, 82);
   animation: pulse 2s infinite;
+}
+.formSection .flexText {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.formSection .flexText .textExplainOne {
+  text-align: left;
+}
+.formSection .flexText .textExplainTwo {
+  text-align: right;
 }
 .formSection .form {
   display: flex;
@@ -559,6 +570,9 @@ footer {
   padding: 20px;
   background-color: black;
   -webkit-text-stroke: 1px white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 @keyframes pulse2 {

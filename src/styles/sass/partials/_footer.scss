@@ -1,11 +1,14 @@
 /* Footer styling */
 
 footer {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
-    padding: 20px;
-    background-color: black;
-    -webkit-text-stroke: 1px white;
-  }
-  
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.8rem;
+  background-color: black;
+  padding: 20px;
+  -webkit-text-stroke: 1px white;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}

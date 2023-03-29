@@ -9,7 +9,7 @@
 
 .welcomeSection {
   background-color: black;
-  height: 100vh;
+  height: 80vh;
   h2 {
     color: white;
     text-align: center;
@@ -32,6 +32,7 @@
 }
 // Styling button
 .getIn {
+  font-size: 1.5rem;
   text-align: center;
   font-family: "Roboto", sans-serif;
   color: white;
