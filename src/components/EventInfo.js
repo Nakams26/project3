@@ -3,7 +3,7 @@
 const EventInfo = (props) => {
   // Transforming the date received in a 12hours format time (I receive YYYYMMDDHHMMSS,  need to transform it in HH:MM AM or PM)
   const dateReceived = `${props.hour}`;
-  // Isolating hours and minutes and storing it in a variable
+  // Isolating hours and minutes and storing it in a variable using subString method
   const formattedDate = dateReceived.substring(8, 12);
   const hour = parseInt(formattedDate.substring(0, 2));
   const minute = formattedDate.substring(2);

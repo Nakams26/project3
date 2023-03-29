@@ -75,13 +75,13 @@ const UserSearch = () => {
       //Alert the user if he didn't select a sport.
     } else alert("Please select a sport");
 
-    //Reformatting the date to respect the format asked by the API documentation (need to send YYYYMMDD)
-    const date = new Date(userChoices[1]);
-    const formattedDate = `${date.getFullYear()}${"0" + (date.getMonth() + 1)}${
-      date.getDate() + 1
-    }`;
+    //Reformatting the date to respect the format asked by the API documentation (need to send YYYYMMDD.I receive YYYY-MM-DD)
+    const date = userChoices[1]
+    // Using replace method to remove the "-" in my date
+    const newDate = date.replace(/-/g,'');
     //Assign the reformatted date to the date value
-    setDateValue(formattedDate);
+    setDateValue(newDate);
+
   };
 
   return (
