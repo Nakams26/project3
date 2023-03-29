@@ -39,7 +39,7 @@ const UserSearch = () => {
         },
         headers: {
           "X-RapidAPI-Key":
-            "fce0b31f1amshb0c1389fb793328p1baa8cjsnb0db7d2d1868",
+            "f6b0e58575mshd91943dd7cf652bp154cb7jsn37f5c73866dd",
           "X-RapidAPI-Host": "livescore6.p.rapidapi.com",
         },
       })
