@@ -31,7 +31,7 @@ const EventInfo = (props) => {
         props.time !== "Canc." &&
         props.time !== "Ret." &&
         props.time !== "Int." &&
-        props.time !== "ToFi." &&
+        props.time !== "ToFi" &&
         props.time !== "Postp." ? (
           <div>
             <div className="liveBlock">
@@ -45,7 +45,7 @@ const EventInfo = (props) => {
           props.time === "Canc." ||
           props.time === "Ret." ||
           props.time === "Int." ||
-          props.time === "ToFi." ||
+          props.time === "ToFi" ||
           props.time === "Postp." ? (
           <p className="gameTime">{props.time}</p>
         ) : (
