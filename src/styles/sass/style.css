@@ -293,7 +293,7 @@ header a {
 
 .welcomeSection {
   background-color: black;
-  height: 100vh;
+  height: 80vh;
 }
 .welcomeSection h2 {
   color: white;
@@ -313,6 +313,7 @@ header a {
 }
 
 .getIn {
+  font-size: 1.5rem;
   text-align: center;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -333,7 +334,7 @@ header a {
 
 /* Main styling */
 main {
-  background: linear-gradient(-180deg, grey 50%, white 100%);
+  background: linear-gradient(-180deg, rgb(176, 176, 176) 50%, white 100%);
   padding-top: 50px;
   padding-bottom: 170px;
 }
@@ -347,6 +348,7 @@ ul {
   /* Styling tennis Li */
   /* Styling hockey Li */
   /* Styling basketball Li */
+  /* Styling soccer Li */
 }
 ul li {
   padding: 20px;
@@ -373,6 +375,11 @@ ul .basketball {
   background-position: center;
   background-size: cover;
 }
+ul .soccer {
+  background-image: url(/assets/abigail-keenan-8-s5QuUBtyM-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+}
 
 /* League infos styling */
 .leagueInfo {
@@ -392,6 +399,7 @@ ul .basketball {
   color: black;
   -webkit-text-stroke: 1px rgb(97, 255, 0);
   text-shadow: 3px 1px 1px white, 2px 2px 1px blue, 4px 2px 1px rgb(97, 255, 0), 3px 3px 1px white, 5px 3px 1px blue, 4px 4px 1px rgb(97, 255, 0);
+  text-align: right;
 }
 
 /* Event time styling */
@@ -496,13 +504,12 @@ h4 {
 }
 .formSection .textForm {
   width: 50%;
-  margin-left: 20px;
+  margin-left: 40px;
 }
 .formSection .textForm .live {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
-  text-align: right;
 }
 .formSection .textForm .live .dot {
   border-radius: 50%;
@@ -518,7 +525,6 @@ h4 {
 .formSection .flexText {
   display: flex;
   justify-content: space-around;
-  align-items: center;
 }
 .formSection .flexText .textExplainOne {
   text-align: left;
@@ -531,7 +537,6 @@ h4 {
   flex-direction: column;
   align-items: center;
   width: 50%;
-  margin-right: 20px;
 }
 .formSection h3 {
   color: black;
@@ -567,12 +572,12 @@ footer {
   text-align: center;
   text-transform: uppercase;
   font-family: "Roboto", sans-serif;
-  padding: 20px;
+  font-size: 0.8rem;
   background-color: black;
+  padding: 20px;
   -webkit-text-stroke: 1px white;
-  position: fixed;
+  position: relative;
   bottom: 0;
-  width: 100%;
 }
 
 @keyframes pulse2 {
@@ -646,6 +651,7 @@ footer {
   }
   header p {
     font-size: 1.2rem;
+    text-align: center;
   }
   /* Welcome section */
   .welcomeSection {
