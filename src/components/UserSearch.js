@@ -19,6 +19,10 @@ const UserSearch = () => {
   const [dateValue, setDateValue] = useState("");
   //Initialize state to represent API request status
   const [apiError, setApiError] = useState(false);
+  //Initialize message in case of error
+  const [message, setMessage] = useState("")
+    //Initialize loading 
+    const [loading, setLoading] = useState("")
 
   //Doing my api call in a useEffect hook because I want it to happen depending on the date and sport value change.
   useEffect(() => {
@@ -29,6 +33,11 @@ const UserSearch = () => {
       sportValue === "soccer" ||
       sportValue === "hockey"
     ) {
+      // Set loading message
+      setLoading("Loading results")
+      // Resetting results to avoid the background display issue ()
+      setResults([])
+      setMessage("")
       axios({
         //URL endpoint
         url: "https://livescore6.p.rapidapi.com/matches/v2/list-by-date", //https://livescore6.p.rapidapi.com/matches/v2/list-by-date
@@ -44,9 +53,18 @@ const UserSearch = () => {
         },
       })
         .then((apiData) => {
+          setLoading("")
+          // Checking if there is events
+          if (apiData.data.Stages.length === 0) {
+            // No event, I display a message
+            setMessage("Sorry, there is no event to display for this date")
+          } else {
+            setResults(apiData.data.Stages);
+            setApiError(false);
+          }
           //Updating state status of results and status of api call depending on the result of the call
-          setResults(apiData.data.Stages);
-          setApiError(false);
+  
+        
         })
         //Catching errors
         .catch((error) => {
@@ -87,7 +105,7 @@ const UserSearch = () => {
   return (
     <main>
       {/* Running  the function when submitting the form. Passing the api error as props */}
-      <Form handleSubmit={userChoices} />
+      <Form handleSubmit={userChoices} message={message} loading={loading}/>
       {/* Passing the results and sport value (I need it for the styling) through props*/}
       <EventGallery
         currentEvent={results}

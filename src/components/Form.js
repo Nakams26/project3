@@ -67,6 +67,8 @@ const Form = (props) => {
             ></input>
             <button type="submit">Get me scores!</button>
           </form>
+          <p className="loading">{props.loading}</p>
+          <p className="errorMessage">{props.message}</p>
         </div>
         {/* Adding text explanation to help read results */}
         <div className="textForm">

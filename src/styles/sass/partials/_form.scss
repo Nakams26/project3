@@ -40,6 +40,18 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
+    .errorMessage{
+      font-size: 2.3rem;
+      font-family: "bangers", sans-serif;
+      -webkit-text-stroke: 1px white;
+      text-shadow: 3px 1px 1px rgb(97, 255, 0);
+    }
+
+    .loading {
+      font-size: 2rem;
+      font-family: "bangers", sans-serif;
+      animation: loading 1s  infinite;}
+      
   }
   h3 {
     color: black;
@@ -54,6 +66,7 @@ form {
   p {
     font-family: "Roboto", sans-serif;
   }
+ 
   select,
   input,
   button {
