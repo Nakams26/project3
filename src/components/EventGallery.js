@@ -9,12 +9,6 @@ const EventGallery = (props) => {
       <div className="wrapper">
         {/* Creating UL */}
         <ul className="events">
-          {/* In case that the API call return an error, I alert the user to try again later */}
-          {props.apiError ? (
-            <h2 className="error">
-              <strong>Sorry an incident occurs, please try again later!</strong>
-            </h2>
-          ) : null}
           {/* Mapping through every results received as I receive it as an array */}
           {props.currentEvent.map((results) => {
             // Creating a variable for every events (Events are array as well)

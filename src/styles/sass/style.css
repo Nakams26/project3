@@ -574,6 +574,18 @@ h4 {
   align-items: center;
   width: 50%;
 }
+.formSection .form .errorMessage {
+  font-size: 2.3rem;
+  font-family: "bangers", sans-serif;
+  -webkit-text-stroke: 1px white;
+  text-shadow: 3px 1px 1px rgb(97, 255, 0);
+  margin: 0;
+}
+.formSection .form .loading {
+  font-size: 2rem;
+  font-family: "bangers", sans-serif;
+  animation: loading 1s infinite;
+}
 .formSection h3 {
   color: black;
   font-size: 2rem;
@@ -680,6 +692,17 @@ footer {
     box-shadow: 0 0 0 0 rgba(255, 82, 82, 0);
   }
 }
+@keyframes loading {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* Media Queries */
 @media (max-width: 950px) {
   /* Header */
@@ -709,6 +732,10 @@ footer {
   .flexForm .textForm {
     width: 100%;
     margin: 40px 0;
+  }
+  .form .errorMessage, .form .loading {
+    margin: 15px 0;
+    padding: 0;
   }
   form {
     flex-direction: column;

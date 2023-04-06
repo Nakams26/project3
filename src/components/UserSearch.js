@@ -17,8 +17,6 @@ const UserSearch = () => {
   const [sportValue, setSportValue] = useState("placeholder");
   //Initialize state to keep track of the date selection by the user
   const [dateValue, setDateValue] = useState("");
-  //Initialize state to represent API request status
-  const [apiError, setApiError] = useState(false);
   //Initialize message in case of error
   const [message, setMessage] = useState("")
     //Initialize loading 
@@ -60,7 +58,6 @@ const UserSearch = () => {
             setMessage("Sorry, there is no event to display for this date")
           } else {
             setResults(apiData.data.Stages);
-            setApiError(false);
           }
           //Updating state status of results and status of api call depending on the result of the call
   
@@ -71,13 +68,16 @@ const UserSearch = () => {
           // Error
           if (error.response) {
             // The request was made and the server responded with a status code that falls out of the range of 2xx >> Api error to true
-            setApiError(true);
+            setLoading("")
+            setMessage("Sorry an incident occurred, please try again later");
           } else if (error.request) {
             // The request was made but no response was received >> Api error to true
-            setApiError(true);
+            setLoading("")
+            setMessage("Sorry an incident occurred, please try again later");
           } else {
             // Something happened in setting up the request that triggered an Error >> Api error to true
-            setApiError(true);
+            setLoading("")
+            setMessage("Sorry an incident occurred, please try again later");
           }
         });
     }
@@ -109,7 +109,6 @@ const UserSearch = () => {
       {/* Passing the results and sport value (I need it for the styling) through props*/}
       <EventGallery
         currentEvent={results}
-        apiError={apiError}
         sportSelected={sportValue}
       />
     </main>
